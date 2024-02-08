@@ -22,11 +22,13 @@ parser = argparse.ArgumentParser(description='Simple LLM Finetuner')
 parser.add_argument('--models',
     nargs='+',
     default=[
-        # 'kfkas/Llama-2-ko-7b-Chat',
-        'beomi/llama-2-ko-7b',
-        'meta-llama/Llama-2-7b-hf',
+        'yanolja/KoSOLAR-10.7B-v0.2',
+        'beomi/OPEN-SOLAR-KO-10.7B',
+        'beomi/Yi-Ko-DUS-9B',
+        'beomi/open-llama-2-ko-7b',
+        'beomi/Yi-Ko-6B'
     ],
-    help='사용가능한 모델 리스트 (gpu T4 기준으로는 7b를 추천드립니다.)'
+    help='사용가능한 모델 리스트 (Ko-LLM 리더보드 상위 모델)'
 )
 
 # train confing
@@ -40,8 +42,10 @@ parser.add_argument('--optim', type=str, default='paged_adamw_32bit', help='사�
 parser.add_argument('--save_steps', type=int, default=0, help='업데이트시 체크포인트 저장')
 parser.add_argument('--logging_steps', type=int, default=25, help='log 업데이트 step')
 parser.add_argument('--weight_decay', type=float, default=0.001, help='레이어에 적용할 가중치 감소율')
-parser.add_argument('--fp16', type=bool, default=False, help='T4는 지원안함 A100은 지원')
-parser.add_argument('--bf16', type=bool, default=False, help='T4는 지원안함 A100은 지원')
+# parser.add_argument('--fp16', type=bool, default=False, help='T4는 지원안함 A100은 지원')
+# parser.add_argument('--bf16', type=bool, default=False, help='T4는 지원안함 A100은 지원')
+parser.add_argument('--fp16', type=bool, default=True, help='T4는 지원안함 A100은 지원(A100전용)')
+parser.add_argument('--bf16', type=bool, default=True, help='T4는 지원안함 A100은 지원(A100전용)')
 parser.add_argument('--max_grad_norm', type=float, default= 0.3, help='Maximum gradient normal')
 parser.add_argument('--max_steps', type=float, default=-1, help='Number of training steps (overrides num_train_epochs)')
 parser.add_argument('--warmup_ratio', type=float, default= 0.03, help='선형 준비 단계 비율')

@@ -434,8 +434,8 @@ class UI():
             with gr.Row():
                 with gr.Column():
                     gr.HTML("""<h2>
-                    <a style="text-decoration: none;" href="https://github.com/choijhyeok/easy_finetuner">Easy Finetuner with free T4 GPU</a>&nbsp;
-                    </a></h2><p>무료 colab 기준 GPU인 T4에서 fine-tune을 수행할수 있게 만든 Gradio</p>""")
+                    <a style="text-decoration: none;" href="https://github.com/crimsonjoo/Easy-Fine-tuner">Easy Fine-tuner (Gradio GUI ver.)</a>&nbsp;
+                    </a></h2><p>By. Crimsonjoo</p>""")
                 with gr.Column():
                   with gr.Row():
                     HF_token = gr.Textbox(label='HF token', type='password')
