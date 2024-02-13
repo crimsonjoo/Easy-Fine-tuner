@@ -24,6 +24,7 @@ parser.add_argument('--models',
     default=[
         'beomi/open-llama-2-ko-7b',
         'nayohan/llama-2-ko-7b-Inst',
+        'nayohan/ko-ref-llama2-7b-Inst',
         'NousResearch/Nous-Hermes-llama-2-7b',
     ],
     help='사용가능한 모델 리스트 (Ko-LLM 리더보드 상위 모델)'

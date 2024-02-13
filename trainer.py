@@ -339,7 +339,7 @@ if __name__ == '__main__':
     t = Trainer()
     t.load_model(MODEL)
 
-    prompt = "Recommend a menu combination from Burger King's menu with a total price of less than 10,000 won."
+    prompt = "원하는 프롬프트를 입력해주세요."
     print(t.generate(prompt))
 
     t.load_lora('lora/melon-mango-orange')
