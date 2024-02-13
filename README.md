@@ -7,8 +7,8 @@
 
 
 
-Easy Fine-tuner는 Llama2 계열 모델의 쉬운 Fine-tune을 빠르게 시연하기 위해 만들어졌습니다.
-(권장) A100*1EA 을 이용한 LoRA/Q-LoRA 파인튜닝 학습
+- Easy Fine-tuner는 Llama2 계열 모델의 쉬운 Fine-tune을 빠르게 시연하기 위해 만들어졌습니다.
+- (초심자 기준) Colab T4 GPU를 활용한 LoRA/Q-LoRA 파인튜닝 학습
 
 
 &nbsp;
@@ -24,7 +24,7 @@ Easy Fine-tuner는 Llama2 계열 모델의 쉬운 Fine-tune을 빠르게 시연�
 ### Usage
 ```
 git clone https://github.com/crimsonjoo/Easy-Fine-tuner.git
-cd easy_finetuner
+cd Easy-Fine-tuner
 pip install -r requirements.txt
 ```
 
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ## 주의사항
 
-- 모든 Parameter는 Colab Pro A100 GPU에 최적화 되도록 설정했습니다. (만약 다른 GPU를 사용하고 싶다면 confing.py에서 fb16, bf16 을 사용하고자 하는 GPU에 맞게 변경해 주세요)
+- 모든 Parameter는 Colab 무료 GPU(T4)에 최적화 되도록 설정했습니다.
 - huggingface의 PEFT 패키지의 SFTTrainer, LoRA를 사용합니다.
 - 현재는 Llama2 기반의 다양한 크기의 모델에만 적용가능하게 설정했습니다. (fine-tune, load, inference 모두)
 
