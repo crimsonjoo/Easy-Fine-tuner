@@ -434,7 +434,7 @@ class UI():
             with gr.Row():
                 with gr.Column():
                     gr.HTML("""<h2>
-                    <a style="text-decoration: none;" href="https://github.com/crimsonjoo/Easy-Fine-tuner">Easy Fine-tuner (Gradio GUI ver.)</a>&nbsp;
+                    <a style="text-decoration: none;" href="https://github.com/crimsonjoo/Easy-Fine-tuner">Easy Fine-tuner (for Beginner)</a>&nbsp;
                     </a></h2><p>By. Crimsonjoo</p>""")
                 with gr.Column():
                   with gr.Row():
