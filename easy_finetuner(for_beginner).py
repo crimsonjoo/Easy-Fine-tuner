@@ -58,7 +58,6 @@ Original file is located at
 !pip install langchain
 !pip install chromadb
 !pip install pydantic==1.10.13
-!pip install gradientai
 !pip install sentence-transformers
 
 !git clone https://github.com/crimsonjoo/Easy-Fine-tuner.git

@@ -22,11 +22,9 @@ parser = argparse.ArgumentParser(description='Simple LLM Finetuner')
 parser.add_argument('--models',
     nargs='+',
     default=[
-        'yanolja/KoSOLAR-10.7B-v0.2',
-        'beomi/OPEN-SOLAR-KO-10.7B',
-        'beomi/Yi-Ko-DUS-9B',
         'beomi/open-llama-2-ko-7b',
-        'beomi/Yi-Ko-6B'
+        'nayohan/llama-2-ko-7b-Inst',
+        'NousResearch/Nous-Hermes-llama-2-7b',
     ],
     help='사용가능한 모델 리스트 (Ko-LLM 리더보드 상위 모델)'
 )
@@ -76,7 +74,7 @@ parser.add_argument('--bnb_4bit_compute_dtype', type=str, default='float16', hel
 parser.add_argument('--use_4bit', type=bool, default=True, help='4bit 사용 여부 설정')
 parser.add_argument('--bnb_4bit_quant_type', type=str, default='nf4', help='fp4 or nf4')
 parser.add_argument('--use_nested_quant', type=bool, default=False, help='중첩 양자화 활성여부')
-parser.add_argument('--save_pretrained_name', type=str, default='llama2-7b-burgerking', help='저장되는 모델이름 설정')
+parser.add_argument('--save_pretrained_name', type=str, default='llama2-7b-trained', help='저장되는 모델이름 설정')
 parser.add_argument('--device-map', type=str, default='', help='사용할 GPU 선택 없으면 자동 0')
 parser.add_argument('--model', type=str, default='meta-llama/Llama-2-7b-hf', help='사용할 모델 선택')
 

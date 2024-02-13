@@ -1,5 +1,5 @@
 
-# Easy Fine-tuner (Gradio GUI ver)
+# Easy Fine-tuner (for Beginner)
 
 [![Open In Colab](https://img.shields.io/static/v1?label=Open%20in%20Colab&message=사용법&color=yellow&logo=googlecolab)](https://colab.research.google.com/drive/1J3I-Sx2juQO0Nb6nfy7i3uM7uXWZpNfu?hl=ko#scrollTo=SJ81RsG4QnFn)
 
@@ -7,7 +7,7 @@
 
 
 
-- Easy Fine-tuner는 Llama2 계열 모델의 쉬운 Fine-tune을 빠르게 시연하기 위해 만들어졌습니다.
+- Easy Fine-tuner는 Llama2-7B 계열 모델의 Fine-tune을 쉽고 빠르게 검증하기 위한 환경
 - (초심자 기준) Colab T4 GPU를 활용한 LoRA/Q-LoRA 파인튜닝 학습
 
 
