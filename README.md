@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 - 모든 Parameter는 Colab 무료 GPU(T4)에 최적화 되도록 설정했습니다.
 - huggingface의 PEFT 패키지의 SFTTrainer, LoRA를 사용합니다.
-- 현재는 Llama2 기반의 다양한 크기의 모델에만 적용가능하게 설정했습니다. (fine-tune, load, inference 모두)
+- 현재는 Llama2 기반 7B 모델에만 적용가능하게 설정했습니다. (fine-tune, load, inference 모두)
 
 
 &nbsp;
