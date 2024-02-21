@@ -339,7 +339,7 @@ class UI():
                     interactive=True,
                     lines=5,
                     label="Prompt",
-                    value="Recommend a menu combination from Burger King's menu with a total price of less than 10,000 won."
+                    value="원하는 프롬프트를 입력해주세요."
                 )
 
                 self.generate_btn = gr.Button('Generate', variant='primary')
