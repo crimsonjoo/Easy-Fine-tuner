@@ -22,12 +22,14 @@ parser = argparse.ArgumentParser(description='Simple LLM Finetuner')
 parser.add_argument('--models',
     nargs='+',
     default=[
+        'beomi/Yi-Ko-6B',
+        'Qwen/Qwen1.5-7B',
         'beomi/open-llama-2-ko-7b',
-        'nayohan/llama-2-ko-7b-Inst',
-        'nayohan/ko-ref-llama2-7b-Inst',
-        'NousResearch/Nous-Hermes-llama-2-7b',
+        'beomi/OPEN-SOLAR-KO-10.7B',
+        'yanolja/KoSOLAR-10.7B-v0.2',
+        'Qwen/Qwen1.5-14B'
     ],
-    help='사용가능한 모델 리스트 (Ko-LLM 리더보드 상위 모델)'
+    help='리더보드 상위 Pretrained 모델'
 )
 
 # train confing
@@ -74,10 +76,10 @@ parser.add_argument('--dataset_name', type=str, default='mlabonne/guanaco-llama2
 parser.add_argument('--bnb_4bit_compute_dtype', type=str, default='float16', help='dtype 설정')
 parser.add_argument('--use_4bit', type=bool, default=True, help='4bit 사용 여부 설정')
 parser.add_argument('--bnb_4bit_quant_type', type=str, default='nf4', help='fp4 or nf4')
-parser.add_argument('--use_nested_quant', type=bool, default=False, help='중첩 양자화 활성여부')
-parser.add_argument('--save_pretrained_name', type=str, default='llama2-7b-trained', help='저장되는 모델이름 설정')
+parser.add_argument('--use_nested_quant', type=bool, default=True, help='중첩 양자화 활성여부')
+parser.add_argument('--save_pretrained_name', type=str, default='model-trained', help='저장되는 모델이름 설정')
 parser.add_argument('--device-map', type=str, default='', help='사용할 GPU 선택 없으면 자동 0')
-parser.add_argument('--model', type=str, default='meta-llama/Llama-2-7b-hf', help='사용할 모델 선택')
+parser.add_argument('--model', type=str, default='yanolja/KoSOLAR-10.7B-v0.2', help='사용할 모델 선택')
 
 
 # GENERATION_PARAMS
@@ -86,8 +88,8 @@ parser.add_argument('--top_p', type=float, default=0 , help='top_p 설정')
 parser.add_argument('--top_k', type=int, default=3, help='top_k 설정')
 parser.add_argument('--temperature', type=float, default=0.1, help='temperature 설정')
 
-args = parser.parse_args()
 
+args = parser.parse_args()
 
 
 ################### 위의 인자값 기준으로 조립
@@ -142,8 +144,6 @@ other_conding_dict = {
     'use_nested_quant' : args.use_nested_quant,
     'save_pretrained_name' : args.save_pretrained_name,
 }
-
-
 
 
 SHARE = args.share

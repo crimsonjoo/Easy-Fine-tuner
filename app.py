@@ -77,8 +77,7 @@ with open("custom.css", "r", encoding="utf-8") as f:
 
 def random_name():
     fruits = [
-        "dragonfruit", "kiwano", "rambutan", "durian", "mangosteen",
-        "jabuticaba", "pitaya", "persimmon", "acai", "starfruit"
+        "a", "b", "c", "d", "e", "f"
     ]
     return '-'.join(random.sample(fruits, 3))
 
@@ -165,10 +164,9 @@ class UI():
       # if hasattr(self, 'HF_token'):
       #   if type(self.HF_token) == str:
       #     os.environ["HF_token"] = self.HF_token
+
     # 이부분 테스트중
     def training_data_block(self):
-
-
           # training_text = gr.TextArea(
           #     lines=20,
           #     label="Training Data",
@@ -196,12 +194,8 @@ class UI():
           example_data = load_from_disk(f"{examples_dir}/{filename}")
           self.dataset = example_data
 
-
         example_filename = gr.Textbox(label='dataset_name')
         gen_btn = gr.Button('Dataset Load')
-
-
-
 
         # training_text.change(fn=load_example, inputs=training_text, outputs=example_filename)
         # print(example_filename)
@@ -234,7 +228,7 @@ class UI():
     def training_launch_block(self, HF_token, dataset_name):
         with gr.Row():
             with gr.Column():
-                self.new_lora_name = gr.Textbox(label='llama2 Adapter Name', value=random_name())
+                self.new_lora_name = gr.Textbox(label='LoRA Adapter Name', value=random_name())
             with gr.Column():
                 train_button = gr.Button('Train', variant='primary')
                 # abort_button = gr.Button('Reset')
