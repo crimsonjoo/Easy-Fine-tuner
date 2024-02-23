@@ -7,7 +7,7 @@
 
 
 
-- Easy Fine-tuner는 Llama2-7B 계열 모델의 Fine-tune을 쉽고 빠르게 검증하기 위한 환경
+- Easy Fine-tuner는 sLLM 모델(7B~13B) 파인튜닝을 쉽고 빠르게 검증/시연하기 위한 환경을 제공합니다.
 - (초심자 기준) Colab T4 GPU를 활용한 LoRA/Q-LoRA 파인튜닝 학습
 
 
@@ -31,10 +31,9 @@ pip install -r requirements.txt
 &nbsp;
 
 ## 주의사항
-
 - 모든 Parameter는 Colab 무료 GPU(T4)에 최적화 되도록 설정했습니다.
-- huggingface의 PEFT 패키지의 SFTTrainer, LoRA를 사용합니다.
-- 현재는 Llama2 기반 7B 모델에만 적용가능하게 설정했습니다. (fine-tune, load, inference 모두)
+- huggingface의 PEFT 패키지의 SFTTrainer, QLoRA를 사용합니다.
+- 무료 GPU(T4)에 13B 가량 크기 모델을 사용하기 위해서 Double Quantization 기법을 사용했습니다.
 
 
 &nbsp;
