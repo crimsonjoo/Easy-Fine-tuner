@@ -23,11 +23,9 @@ parser.add_argument('--models',
     nargs='+',
     default=[
         'beomi/Yi-Ko-6B',
-        'Qwen/Qwen1.5-7B',
         'beomi/open-llama-2-ko-7b',
         'beomi/OPEN-SOLAR-KO-10.7B',
-        'yanolja/KoSOLAR-10.7B-v0.2',
-        'Qwen/Qwen1.5-14B'
+        'yanolja/KoSOLAR-10.7B-v0.2'
     ],
     help='리더보드 상위 Pretrained 모델'
 )

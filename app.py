@@ -76,10 +76,10 @@ with open("custom.css", "r", encoding="utf-8") as f:
 
 
 def random_name():
-    fruits = [
-        "a", "b", "c", "d", "e", "f"
+    adapter_name = [
+        "crimson", "joo", "jungsoo",
     ]
-    return '-'.join(random.sample(fruits, 3))
+    return '-'.join(random.sample(adapter_name, 3))
 
 class UI():
     def __init__(self):
