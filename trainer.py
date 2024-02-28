@@ -32,10 +32,10 @@ from config import (
 from trl import SFTTrainer
 
 
-def llama2_prompt(input_text):
-  return f'### Instruction:\n{input_text}\n\n### Response:'
+def llm_prompt(input_text):
+  return f'A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite korean answers to the questions.\n\n### Instruction: {input_text}\n\n### Response:'
 
-def llama2_output(ouput_text):
+def llm_output(ouput_text):
   sep = ouput_text[0]['generated_text'].split('### Response:')[1].split('### Instruction')[0].split('## Instruction')[0].split('# Instruction')[0].split('Instruction')[0]
   sep = sep[1:] if sep[0] == '.' else sep
   sep = sep[:sep.find('.')+1] if '.' in sep else sep
@@ -178,9 +178,9 @@ class Trainer():
             disable_lora = self.model.disable_adapter()
 
         
-        result = pipe(llama2_prompt(prompt))
+        result = pipe(llm_prompt(prompt))
         # print(result)
-        return llama2_output(result)
+        return llm_output(result)
 
 
         # if self.model.config.pad_token_id is None:
@@ -342,7 +342,7 @@ if __name__ == '__main__':
     prompt = "원하는 프롬프트를 입력해주세요."
     print(t.generate(prompt))
 
-    t.load_lora('lora/melon-mango-orange')
+    t.load_lora('lora/crimson-joo')
     print(t.generate(prompt))
 
     t.unload_lora()
