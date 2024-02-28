@@ -22,13 +22,13 @@ parser = argparse.ArgumentParser(description='Simple LLM Finetuner')
 parser.add_argument('--models',
     nargs='+',
     default=[
-        'beomi/Yi-Ko-6B',
         'beomi/open-llama-2-ko-7b',
+        'beomi/llama-2-koen-13b',
         'beomi/OPEN-SOLAR-KO-10.7B',
         'yanolja/KoSOLAR-10.7B-v0.2',
         'yanolja/EEVE-Korean-10.8B-v1.0'
     ],
-    help='리더보드 상위 Pretrained 모델'
+    help='리더보드 상위 모델'
 )
 
 # train confing
